@@ -85,8 +85,4 @@ cli.add_command(evaluate)
 if __name__ == "__main__":
     cli()
 
-
-    
-    
-    
-    
+  
