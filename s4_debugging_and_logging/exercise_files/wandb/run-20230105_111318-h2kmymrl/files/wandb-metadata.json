@@ -1,0 +1,34 @@
+{
+    "os": "macOS-12.1-arm64-arm-64bit",
+    "python": "3.8.9",
+    "heartbeatAt": "2023-01-05T10:13:19.044248",
+    "startedAt": "2023-01-05T10:13:18.510133",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "/Users/annabzinkowska/DTU/MLops/dtu_mlops_fork/s1_development_environment/exercise_files/final_exercise/main.py",
+    "codePath": "s1_development_environment/exercise_files/final_exercise/main.py",
+    "git": {
+        "remote": "https://github.com/abzink/dtu_mlops_fork.git",
+        "commit": "01117fd073a1993be23ee22bab414c3ceefe3ea2"
+    },
+    "email": "s213027@student.dtu.dk",
+    "root": "/Users/annabzinkowska/DTU/MLops/dtu_mlops_fork",
+    "host": "Annas-MacBook-Pro-2.local",
+    "username": "annabzinkowska",
+    "executable": "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+    "cpu_count": 8,
+    "cpu_count_logical": 8,
+    "disk": {
+        "total": 228.27386474609375,
+        "used": 14.672481536865234
+    },
+    "gpuapple": {
+        "type": "arm",
+        "vendor": "Apple"
+    },
+    "memory": {
+        "total": 8.0
+    }
+}

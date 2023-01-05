@@ -13,6 +13,10 @@ import torch.nn.functional as F
 from torch.utils.data import DataLoader
 import matplotlib.pyplot as plt
 
+
+import wandb
+wandb.init(project="my-awesome-project", config = {"epochs": 100})
+
 @click.group()
 def cli():
     pass
@@ -25,13 +29,14 @@ def train(lr):
     print(lr)
 
     model = MyAwesomeModel()
+    wandb.watch(model, log_freq=100)
     train_set, _ = mnist()
     trainloader = DataLoader(train_set, batch_size=64, shuffle=True)
 
     criterion = nn.NLLLoss()
     optimizer = optim.Adam(model.parameters(), lr=lr)
     
-    epochs = 200
+    epochs = wandb.config.epochs
     epochs_loss = []
     for _ in range(epochs):
         running_loss = 0
@@ -44,10 +49,14 @@ def train(lr):
             loss.backward() # calculate gradient
             optimizer.step() # back probagate
             running_loss += loss.item() # calculate loss
+            wandb.log({"loss": loss})
         else:
             loss_epoch_mean = running_loss/len(trainloader)
             epochs_loss.append(loss_epoch_mean)
             print(f"Training loss: {running_loss/len(trainloader)}")
+            
+            
+
 
 
     plt.plot(epochs_loss)
